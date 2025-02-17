@@ -464,10 +464,6 @@
                         },
                         "name": "FFmpeg অপশনস"
                     },
-                    "logging": {
-                        "name": "লগিং",
-                        "description": "মিডিয়া ডাউনলোড হচ্ছে এমন সময় টোস্ট দেখায়"
-                    },
                     "custom_path_format": {
                         "description": "ডাউনলোডেড মিডিয়ার জন্য একটি কাস্টম পাথ ফরম্যাট নির্দিষ্ট করুন\n\nউপলব্ধ ভেরিয়েবল:\n - %username%\n - %source%\n - %hash%\n - %date_time%",
                         "name": "কাস্টম পাথ ফরম্যাট"

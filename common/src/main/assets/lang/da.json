@@ -337,10 +337,6 @@
                             }
                         }
                     },
-                    "logging": {
-                        "name": "Logging",
-                        "description": "Viser toasts, når mediet downloades"
-                    },
                     "download_context_menu": {
                         "name": "Download kontekst menu",
                         "description": "Giver dig mulighed for at downloade/forhåndsvise beskeder fra en samtale eller en historie ved hjælp af kontekstmenuen.\nLangt tryk på knapperne vil tvinge download"

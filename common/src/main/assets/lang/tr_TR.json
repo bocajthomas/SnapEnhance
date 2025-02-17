@@ -357,10 +357,6 @@
                             }
                         }
                     },
-                    "logging": {
-                        "name": "Günlük Kaydı",
-                        "description": "Medya indirilirken tost mesajlarını gösterir"
-                    },
                     "custom_path_format": {
                         "description": "İndirilen medya için özel bir yol biçimi belirtin\n\nKullanılabilir değişkenler:\n - %username%\n - %source%\n - %hash%\n - %date_time%",
                         "name": "Özel Yol Formatı"

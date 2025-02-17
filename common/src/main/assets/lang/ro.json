@@ -803,10 +803,6 @@
                         "name": "Descărcați meniul contextual",
                         "description": "Vă permite să descărcați/previzualizați mesaje dintr-o conversație sau o poveste folosind meniul contextual.\nApăsarea lungă a butoanelor va forța descărcarea"
                     },
-                    "logging": {
-                        "description": "Arată notificări când se descarcă media",
-                        "name": "Logare"
-                    },
                     "custom_path_format": {
                         "description": "Specificați un format de cale personalizat pentru conținutul media descărcat\n\nVariabile disponibile:\n- %nume de utilizator%\n- %sursă%\n- %hash%\n- %dată_timp%",
                         "name": "Format de cale personalizat"

@@ -177,7 +177,11 @@
                 "disable_state_option": "Deaktiviert",
                 "whitelist_state_subtext": "Nur {count} Freude/Gruppen werden von dieser Regel betroffen sein",
                 "whitelist_state_option": "Niemand, außer ...",
-                "dialog_clear_confirmation_text": "Möchtest du die Liste wirklich löschen?"
+                "dialog_clear_confirmation_text": "Möchtest du die Liste wirklich löschen?",
+                "blacklist_state_subtext": "Jeder außer {count} Freunde/Gruppen werden von dieser Regel betroffen sein",
+                "disable_state_subtext": "Freunde/Gruppen sind nicht betroffen",
+                "blacklist_state_option": "Jeder außer...",
+                "whitelist_state_button": "Wähle erlaubte Freunde/Gruppen"
             }
         },
         "dialogs": {
@@ -353,10 +357,6 @@
                                 "description": "Wähle einen benutzerdefinierten Audio-Codec (z.B. AAC)"
                             }
                         }
-                    },
-                    "logging": {
-                        "name": "Protokollierung",
-                        "description": "Zeigt Toasts, wenn Medien heruntergeladen werden"
                     },
                     "custom_path_format": {
                         "description": "Legen Sie ein benutzerdefiniertes Pfadformat für heruntergeladene Medien fest\n\nVerfügbare Variablen:\n - %username%\n - %source%\n - %hash%\n - %date_time%",

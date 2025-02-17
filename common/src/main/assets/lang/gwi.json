@@ -371,10 +371,6 @@
                         "name": "Sprachnotiz Format erzwingen",
                         "description": "Erzwingt das Speichern von Sprachnotizen in einem bestimmten Format"
                     },
-                    "logging": {
-                        "description": "Zeigt Toasts, wenn Medien heruntergeladen werden",
-                        "name": "Logging"
-                    },
                     "save_folder": {
                         "name": "Speicherverzeichnis",
                         "description": "Wähle das Verzeichnis, in das alle Medien heruntergeladen werden sollen"

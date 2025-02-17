@@ -424,10 +424,6 @@
                         "name": "Force Image Format",
                         "description": "Forces images to be saved in a specified Format"
                     },
-                    "logging": {
-                        "name": "Logging",
-                        "description": "Shows toasts when media is downloading"
-                    },
                     "custom_path_format": {
                         "name": "Custom Path Format",
                         "description": "Specify a custom path format for downloaded media\n\nAvailable variables:\n - %username%\n - %source%\n - %hash%\n - %date_time%"
@@ -466,6 +462,10 @@
                             "home_tab": {
                                 "name": "Home Tab",
                                 "description": "Overrides the startup tab when opening Snapchat"
+                            },
+                            "simple_snapchat": {
+                                "description": "Enables a simplified version of Snapchat",
+                                "name": "Simple Snapchat"
                             }
                         },
                         "name": "Bootstrap Override"
@@ -549,6 +549,14 @@
                     "hide_quick_add_suggestions": {
                         "description": "Removes quick add friend suggestions",
                         "name": "Hide Quick Add Suggestions"
+                    },
+                    "icon_style": {
+                        "name": "Icon Style",
+                        "description": "Changes the style of material icons\n\nFeatures Supported:\n - Opera Download Button \n - Mark Snap As Seen Button \n - Friend Feed Menu Buttons\n - COF Experiments\n - Message Indicators"
+                    },
+                    "custom_friend_feed_label": {
+                        "description": "Changes the page label on the friend feed",
+                        "name": "Custom Friend Feed Label"
                     }
                 },
                 "name": "User Interface",
@@ -1405,6 +1413,21 @@
                 "lemon_drop": "Lemon Drop",
                 "modern_farmhouse": "Modern Farmhouse",
                 "material_you_dark": "Material You Dark (Android 12+)"
+            },
+            "snapchat_plus": {
+                "basic": "Basic",
+                "ad_free": "Ad Free",
+                "not_subscribed": "Not Subscribed"
+            },
+            "simple_snapchat": {
+                "always_enabled": "Always Enabled",
+                "always_disabled": "Always Disabled"
+            },
+            "icon_style": {
+                "outlined": "Outlined",
+                "filled": "Filled",
+                "sharp": "Sharp",
+                "two-tone": "Two Tone"
             }
         }
     },

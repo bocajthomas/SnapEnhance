@@ -34,7 +34,11 @@
             "edit_rule": "Szabály szerkesztése",
             "friend_tracker": "Barát figyelő",
             "better_location": "Jobb helyzet",
-            "file_imports": "Fájl importálások"
+            "file_imports": "Fájl importálások",
+            "theming": "Témázás",
+            "edit_theme": "Téma Szerkesztése",
+            "manage_repos": "Adattárak kezelése",
+            "manage_rule_feature": "Szabálykezelési Funkció"
         },
         "sections": {
             "features": {
@@ -46,7 +50,9 @@
                 "config_import_failure_toast": "Beállításfájl importálása sikertelen {error}",
                 "saved_config_snackbar": "Beállításfájl elmentve",
                 "export_option": "Exportálás",
-                "config_export_failure_toast": "Nem sikerült a configot exportálni {error}"
+                "config_export_failure_toast": "Nem sikerült a configot exportálni {error}",
+                "newer_required": "Ehhez a funkcióhoz a Snapchat v{version} vagy újabb verziója szügséges hogy helyesen működjön",
+                "older_required": "Ehhez a funkcióhoz a Snapchat v{version} vagy régebbi verziója szügséges"
             },
             "social": {
                 "streaks_expiration_short": "{hours} óra",
@@ -68,7 +74,7 @@
                 "update_title": "SnapEnhance frissítés",
                 "update_content": "A(z) {version} már elérhető!",
                 "update_button": "Letöltés",
-                "version_title": "v{versionName} · rhunk által",
+                "version_title": "V{versionName} · bocajthomas által",
                 "debug_build_summary_content": "Verzió {versionName} ({versionCode})",
                 "debug_build_summary_date": "Buildelés dátuma: {date} ({days} napja)",
                 "quick_actions_title": "Gyors műveletek",
@@ -103,7 +109,8 @@
                 "streaks_expiration_text": "Lejár {eta} időn belül",
                 "streaks_expiration_text_expired": "Lejárt",
                 "reminder_button": "Emlékeztető beállítása",
-                "delete_scope_confirm_dialog_title": "Biztosan törölni szeretnéd a {scope}-ot?"
+                "delete_scope_confirm_dialog_title": "Biztosan törölni szeretnéd a {scope}-ot?",
+                "notes_placeholder": "Kattintson a jegyzet hozzáadásához"
             },
             "logged_stories": {
                 "story_failed_to_load": "Sikertelen betöltés",
@@ -162,6 +169,21 @@
                 "delete_dialog_title": "Mentett kordináta törlése",
                 "search_bar": "Keresés",
                 "suspend_location_updates": "Helyadatok küldésének letiltása"
+            },
+            "manage_rule_feature": {
+                "disable_state_option": "Kikapcsolva",
+                "disable_state_subtext": "Egyetlen barátot vagy csoportot sem érint",
+                "whitelist_state_option": "Senki, kivéve ...",
+                "whitelist_state_subtext": "Csak {count} barátot/csoportot érint ez a szabály",
+                "dialog_clear_confirmation_text": "Biztos vagy benne, hogy törölni akarod a listát?",
+                "blacklist_state_subtext": "Mindenkit érint ez a szabály, kivéve {count} barátot/csoportot",
+                "blacklist_state_button": "Válassza ki a kizárt barátokat/csoportokat",
+                "clear_list_button": "Törölje a barátok/csoportok listáját",
+                "blacklist_state_option": "Mindenki kivéve ...",
+                "whitelist_state_button": "Válassza ki az engedélyezett barátokat/csoportokat"
+            },
+            "theming": {
+                "no_themes_hint": "Nem található téma"
             }
         },
         "dialogs": {
@@ -334,10 +356,6 @@
                             }
                         }
                     },
-                    "logging": {
-                        "name": "Naplózás",
-                        "description": "Üzenet megjelenítése média letöltésekor"
-                    },
                     "opera_download_button": {
                         "description": "Hozzáad egy letöltés gombot a jobb felső sarokban, amikor egy Snapet nézel.\nA gombok hosszú megnyomása kikényszeríti a letöltést",
                         "name": "Letöltés Operával Gomb"
@@ -353,6 +371,24 @@
                     "download_context_menu": {
                         "name": "Letöltés kontextusmenü",
                         "description": "Lehetővé teszi az üzenetek letöltését/előnézetét egy beszélgetésből vagy egy történetből a kontextusmenü segítségével.\nA gombok hosszú megnyomása kikényszeríti a letöltést"
+                    },
+                    "auto_download_voice_notes": {
+                        "name": "Hangüzenetek Automatikus Letöltése",
+                        "description": "Automatikusan letölti a hangüzeneteket, amikor lejátsza őket"
+                    },
+                    "logging_options": {
+                        "name": "Naplózási Beállítások",
+                        "properties": {
+                            "logging": {
+                                "name": "Naplózás",
+                                "description": "Értesítéseket jelenít meg, amikor médiafájlok töltődnek le"
+                            },
+                            "disappearing_rate": {
+                                "name": "Eltűnési Arány",
+                                "description": "Beállítja a toast üzenetek eltűnési sebességét (ezredmásodpercben)\nAz értéknek 100 és 3000 között kell lennie"
+                            }
+                        },
+                        "description": "Naplózási Értesítések Beállításai"
                     }
                 }
             },
@@ -382,6 +418,10 @@
                             "home_tab": {
                                 "name": "Kezdőlap fül",
                                 "description": "Felülírja a megjelenő ablakot a Snapchat indulásakor"
+                            },
+                            "simple_snapchat": {
+                                "name": "Egyszerű Snapchat",
+                                "description": "Engedélyezi a Snapchat egyszerűsített verzióját"
                             }
                         },
                         "description": "Felülírja a kezelőfelület Bootstrap beállításait",
@@ -454,6 +494,26 @@
                     "message_indicators": {
                         "name": "Üzenetjelzők",
                         "description": "Speciális jelzőikonok hozzáadása az üzenetekhez\nMegjegyzés: a mutatók nem biztos, hogy 100%-ban pontosak"
+                    },
+                    "icon_style": {
+                        "name": "Ikon Stílus",
+                        "description": "Megváltoztatja az anyag ikonok stílusát.\n\nTámogatott funkciók:\n- Opera letöltés gomb\n- Snap megjelölése mint \"megnézve\" gomb\n- Barátok hírcsatornája menü gombjai\n- COF kísérletek\n- Üzenet jelzők\n - Naplózás"
+                    },
+                    "custom_friend_feed_label": {
+                        "name": "Egyedi Barátok Hírcsatorna címke",
+                        "description": "Megváltoztatja a barátok hírcsatornáján lévő oldal címkét"
+                    },
+                    "hide_quick_add_suggestions": {
+                        "name": "Rejtse el a Gyors Hozzáadás javaslatokat",
+                        "description": "Eltávolítja a gyors barát hozzáadási javaslatokat"
+                    },
+                    "custom_theme": {
+                        "name": "Egyedi Téma",
+                        "description": "Testreszabhatja a Snapchat színeit.\nMegjegyzés: Ha sötét témát választ (például AMOLED), előfordulhat, hogy a jobb eredmény érdekében engedélyeznie kell a sötét módot az Alkalmazás megjelenésének beállításainál"
+                    },
+                    "auto_close_friend_feed_menu": {
+                        "name": "Barát Hírfolyam Menü Automatikus Bezárása",
+                        "description": "A Barát Hírfolyam Menü automatikusan bezáródik egy beállítási gomb megnyomása után"
                     }
                 },
                 "description": "Módosítsd a Snapchat kinézetét"
@@ -626,6 +686,14 @@
                     "unlimited_conversation_pinning": {
                         "description": "Engedélyezi, hogy végtelen mennyiségű beszélgetést kitűzz helyileg",
                         "name": "Korlátlan beszélgetés kitűzés"
+                    },
+                    "skip_when_marking_as_seen": {
+                        "name": "Kihagyás Látottként Jelöléskor",
+                        "description": "Automatikusan továbblép a következő Snapre, amikor egy Snapet látottként jelöl.\nHasználd a Jelöld a Snapet Látottként Gomb kombinációjával"
+                    },
+                    "mark_snap_as_seen_button": {
+                        "name": "Jelöld a Snapet Látottként Gomb",
+                        "description": "Hozzáad egy gombot, amellyel megjelölheted a Snap-et \"megnézve\" státusszal, miközben nézed.\nEz akkor is működik, ha a Rejtett mód engedélyezve van"
                     }
                 },
                 "description": "Változtasd meg a barátaiddal való kapcsolattartásodat"
@@ -700,6 +768,10 @@
                             "walk_radius": {
                                 "description": "Random ezen a területen belül fogsz sétálni (láb/ft)",
                                 "name": "Séta körzet"
+                            },
+                            "show_battery_level": {
+                                "description": "Megjeleníti a barátaid akkumulátor szintjét a térképen",
+                                "name": "Akkumulátor Szintjének Megjelenítése"
                             }
                         }
                     },
@@ -863,6 +935,10 @@
                             "custom_emoji_font": {
                                 "name": "Egyedi emoji betűtípus",
                                 "description": "Engedélyezi az egyedi emoji betűtípust. Csak .ttf fájlokkal működik"
+                            },
+                            "custom_shared_library": {
+                                "description": "Egyedi megosztott könyvtárat tölthet be a Snapchatbe. Ez a funkció csak tesztelési célokra szolgál",
+                                "name": "Egyedi Megosztott Könyvtár"
                             }
                         },
                         "name": "Natív hookok",
@@ -991,6 +1067,36 @@
                     "context_menu_fix": {
                         "name": "Kontextus menü javítás",
                         "description": "Próbálja megjavítani a Friend Feed menüt, mivel ha a készülék offline állapotban van, nem jelenik meg megfelelően"
+                    },
+                    "better_transcript": {
+                        "description": "Javítja a hangüzenet átiratát",
+                        "properties": {
+                            "preferred_transcription_lang": {
+                                "name": "Előnyben részesített átirat nyelve",
+                                "description": "Az előnyben részesített nyelv a hangüzenet átiratához (pl. EN, ES, FR)"
+                            },
+                            "enhanced_transcript_in_notifications": {
+                                "description": "Hangüzenetek átiratát készíti el értesítésekben a DeepL segítségével. Ehhez szükséges, hogy a \"Csevegés Előnézet\" funkció engedélyezve legyen a \"Jobb Értesítések\" beállításainál",
+                                "name": "Fejlettebb Átirat Értesítésekben"
+                            },
+                            "force_transcription": {
+                                "name": "Kényszerítse a hangüzenet átiratát",
+                                "description": "Lehetővé teszi, hogy az összes hangüzenet átiratát elkészítse"
+                            },
+                            "enhanced_transcript": {
+                                "name": "Fejlettebb átirat",
+                                "description": "Javítja a hangüzenet átiratát a DeepL segítségével.\nMielőtt használná ezt a funkciót, kérjük, győződjön meg arról, hogy elolvasta a DeepL adatvédelmi szabályzatát."
+                            }
+                        },
+                        "name": "Jobb átirat"
+                    },
+                    "friend_notes": {
+                        "name": "Barátok Jegyzetei",
+                        "description": "Lehetővé teszi, hogy jegyzeteket adj a barátok profiljaihoz"
+                    },
+                    "voice_note_auto_play": {
+                        "name": "Hangüzenet Automatikus Lejátszása",
+                        "description": "Automatikusan lejátssza a következő hangüzenetet, miután a jelenlegi befejeződött"
                     }
                 }
             },
@@ -1015,6 +1121,10 @@
                     "disable_log_anonymization": {
                         "name": "Napló anonimizálás kikapcsolása",
                         "description": "Letiltja a naplók anonimizálását"
+                    },
+                    "old_tool_box_add_view": {
+                        "description": "A régi hozzáadott nézetet használja az eszköztár hozzáadásához a Snapchathez.\nMegjegyzés: Ez a funkció ideiglenes",
+                        "name": "Régi Eszköztár Hozzáadása Nézet"
                     }
                 },
                 "description": "Egyéni szkriptek futtatása a SnapEnhance bővítéséhez",
@@ -1059,7 +1169,7 @@
                 "friend_snaps": "Barát Snap-ek",
                 "friend_stories": "Barát történetek",
                 "public_stories": "Nyilvános történetek",
-                "spotlight": "Spotlight"
+                "spotlight": "Reflektorfény"
             },
             "logging": {
                 "started": "Elkezdődött",
@@ -1073,7 +1183,7 @@
                 "snap_replay": "Snap újrajátszás",
                 "chat": "Chat",
                 "chat_reply": "Chat Válasz",
-                "snap": "Snap",
+                "snap": "Pillanatkép",
                 "typing": "Gépel",
                 "stories": "Történetek",
                 "initiate_audio": "Bejövő hívás",
@@ -1086,10 +1196,11 @@
                 "speaking": "Beszél"
             },
             "gallery_media_send_override": {
-                "ORIGINAL": "Eredeti",
-                "SNAP": "Snap",
+                "ORIGINAL": "Eredeti Média",
+                "SNAP": "Pillanatkép",
                 "NOTE": "Hangüzenet",
-                "always_ask": "Mindig kérdezze meg"
+                "always_ask": "Mindig kérdezze meg",
+                "SAVEABLE_SNAP": "Menthető Snap"
             },
             "hide_ui_components": {
                 "hide_chat_call_buttons": "Hívás gombok eltávolítása",
@@ -1098,19 +1209,26 @@
                 "hide_unread_chat_hint": "Olvasatlan csevegési utalás eltávolítása",
                 "hide_stickers_button": "Matricák gomb eltávolítása",
                 "hide_live_location_share_button": "Élő helymegosztó gomb eltávolítása",
-                "hide_post_to_story_buttons": "A Snap elküldése előtti Post to Story gombok eltávolítása"
+                "hide_post_to_story_buttons": "A Snap elküldése előtti Post to Story gombok eltávolítása",
+                "hide_map_reactions": "Eltávolítja a Térkép Reakciókat",
+                "hide_snap_create_group_buttons": "Eltávolítja a Snap Csoport Létrehozása Gombokat",
+                "hide_chat_camera_button": "Eltávolítja a Csevegés Kamera Gombot",
+                "hide_gift_snapchat_plus_reminders": "Eltávolítja a Snapchat Plus Ajándékozás Emlékeztetőit",
+                "hide_chat_gallery_button": "Eltávolítja a Csevegés Galéria Gombot",
+                "hide_explorer_token_button": "Eltávolítja az Explorer Token Gombot"
             },
             "home_tab": {
                 "map": "Térkép",
                 "chat": "Chat",
                 "camera": "Kamera",
                 "discover": "Felfedezés",
-                "spotlight": "Spotlight"
+                "spotlight": "Reflektorfény"
             },
             "disable_story_sections": {
                 "friends": "Barátok",
                 "following": "Követve",
-                "discover": "Felfedezés"
+                "discover": "Felfedezés",
+                "suggested_stories": "Javasolt Történetek"
             },
             "edit_text_override": {
                 "bypass_text_input_limit": "Szövegbeviteli korlát megkerülése",
@@ -1211,6 +1329,61 @@
                 "remove_friend": "Értesítés, ha valaki eltávolít téged barátként",
                 "bitmoji_selfie_changes": "Értesítés, ha valaki megváltoztatja a Bitmoji önarcképét",
                 "bitmoji_background_changes": "Értesítés, ha valaki megváltoztatja a Bitmoji háttérképét"
+            },
+            "custom_theme": {
+                "gingerbread_house": "Mézeskalács Ház",
+                "art_deco_glam": "Art Deco Fényűzés",
+                "amoled_dark_mode": "AMOLED Sötét Mód",
+                "custom": "Egyedi témák (Használja a Gyors Műveletek funkciót a témák kezelésére)",
+                "material_you_light": "Material You Világos Téma (Android 12+)",
+                "zesty_lemon": "Friss Citrom",
+                "spring_meadow": "Tavaszi Rét",
+                "light_blue": "Világos Kék",
+                "material_you_dark": "Material You Sötét Téma (Android 12+)",
+                "mint_chocolate": "Mentás Csokoládé",
+                "ginger_snap": "Gyömbéres Snap",
+                "lava_flow": "Lávafolyam",
+                "industrial_chic": "Ipari Elegancia",
+                "cherry_bomb": "Cseresznye Bomba",
+                "woodland_mystery": "Erdő Titka",
+                "firefly_night": "Szitakötő Éjszaka",
+                "ocean_depths": "Óceáni Mélységek",
+                "apple_orchard": "Almáskert",
+                "lavender_field": "Levendula Mező",
+                "earthy_autumn": "Földes Őszi",
+                "alien_landscape": "Idegen Táj",
+                "dark_blue": "Sötét Kék",
+                "midnight_slate": "Éjféli Pala",
+                "ocean_fog": "Óceáni Köd",
+                "watercolor_wash": "Akvarell Mosás",
+                "tropical_paradise": "Trópusi Paradicsom",
+                "lemon_sorbet": "Citrom Sorbet",
+                "cosmic_night": "Kozmikus Éjszaka",
+                "bubblegum_pink": "Rágógumi Rózsaszín",
+                "modern_farmhouse": "Modern Tanya",
+                "lemon_meringue": "Citromos Habcsók",
+                "galaxy_glitter": "Galaxis Csillogás",
+                "creamy_vanilla": "Krémes Vanília",
+                "midnight_library": "Éjféli Könyvtár",
+                "lemon_drop": "Citromcsepp",
+                "spicy_chili": "Csípős Chili",
+                "spicy_mustard": "Fűszeres Mustár",
+                "peppermint_candy": "Borsmentás Cukorka"
+            },
+            "simple_snapchat": {
+                "always_enabled": "Mindig Engedélyezve",
+                "always_disabled": "Mindig Kikapcsolva"
+            },
+            "snapchat_plus": {
+                "not_subscribed": "Nincs Feliratkozva",
+                "basic": "Alap",
+                "ad_free": "Reklám Mentes"
+            },
+            "icon_style": {
+                "outlined": "Kiemelt",
+                "filled": "Kitöltött",
+                "sharp": "Éles",
+                "two-tone": "Két Tónusú"
             }
         }
     },
@@ -1296,7 +1469,8 @@
         "negative": "Nem",
         "cancel": "Mégsem",
         "open": "Megnyitás",
-        "download": "Letöltés"
+        "download": "Letöltés",
+        "send": "Küldés"
     },
     "profile_picture_downloader": {
         "button": "Profilkép letöltése",
@@ -1306,7 +1480,7 @@
     },
     "download_processor": {
         "attachment_type": {
-            "snap": "Snap",
+            "snap": "Pillanatkép",
             "sticker": "Matrica",
             "external_media": "Külső média",
             "note": "Megjegyzés",
@@ -1331,7 +1505,8 @@
             "segment_text": "Szegmens {from} - {to}",
             "title": "Dash média letöltése"
         },
-        "dash_no_chapter": "Nincsenek fejezetek"
+        "dash_no_chapter": "Nincsenek fejezetek",
+        "content_saved_toast": "Elmentve!"
     },
     "streaks_reminder": {
         "notification_title": "Sorozatok",
@@ -1405,6 +1580,18 @@
         "logger_history": {
             "name": "Naplózó előzmények",
             "description": "Nézd meg az előményeket a naplózott üzenetekről"
+        },
+        "security_features": {
+            "name": "Biztonsági Funkciók",
+            "description": "Módosítsa a biztonsági funkciók beállításait"
+        },
+        "theming": {
+            "description": "Testreszabhatja a Snapchat megjelenését és stílusát",
+            "name": "Téma beállítások"
+        },
+        "disclaimer_statement": {
+            "name": "Jogi nyilatkozat",
+            "description": "Olvassa el a jogi nyilatkozatot"
         }
     },
     "content_type": {
@@ -1415,7 +1602,7 @@
         "LOCATION": "Helyszín",
         "NOTE": "Hangüzenet",
         "CHAT": "Csevegés",
-        "SNAP": "Snap",
+        "SNAP": "Pillanatkép",
         "STATUS": "Állapot",
         "STATUS_CALL_MISSED_VIDEO": "Nem fogadott videóhívás",
         "FAMILY_CENTER_ACCEPT": "Családi központ elfogadás",
@@ -1526,5 +1713,53 @@
     "auto_open_snaps": {
         "title": "Automatikus Snaps Megnyitás",
         "notification_content": "{count} Snaps megnyitva"
+    },
+    "theming_attributes": {
+        "sigColorTextPrimary": "Fő szöveg szín",
+        "sigColorChatChat": "Fő Barátok Hírcsatorna Szöveg Színe",
+        "listDivider": "Lista Elválasztó Színe",
+        "sigColorIconSecondary": "Másodlagos Ikon Színe",
+        "sigColorLayoutPlaceholder": "Elrendezés Helyettesítő Színe",
+        "pstsTabBackground": "PSTS Fül Háttér",
+        "sigExceptionColorCameraGridLines": "Kamera Rácsvonalak Színe",
+        "strokeColor": "Vonalszín",
+        "sigColorBackgroundSurface": "Háttér Felület Szín",
+        "ringStartColor": "Gyűrű Kezdő Színe",
+        "tabTextColor": "Fül Szöveg Színe",
+        "sigColorButtonPrimary": "Elsődleges Gomb Színe",
+        "statusBarBackground": "Állapotsor Háttérszíne",
+        "storyReplayViewRingColor": "Történet Újrajátszás Gyűrű Színe",
+        "actionSheetBackgroundDrawable": "Akció Menü Háttér Színe",
+        "actionSheetRoundedBackgroundDrawable": "Akció Menü Kerek Háttér Színe",
+        "listBackgroundDrawable": "Beszélgetés lista Háttér",
+        "sigColorChatConversationsLine": "Beszélgetések Vonal Színe",
+        "rangeFillColor": "Sáv Színe",
+        "editTextColor": "Szöveg Színének Módosítása",
+        "statusBarForeground": "Állapotsor Előtérszíne",
+        "sigColorBackgroundSurfaceTranslucent": "Áttetsző Háttér Felület Színe",
+        "sigColorStoryRingFriendsFeedStoryRing": "Történet Gyűrű Barátok Hírfolyam Történet Gyűrű Színe",
+        "sigColorStoryRingDiscoverTabThumbnailStoryRing": "Történet Gyűrű Felfedezés Lap Képnézet Történet Gyűrű Színe",
+        "actionSheetDescriptionTextColor": "Akció Menü Leírás Szöveg Színe",
+        "sigColorBackgroundMain": "Háttér Szín",
+        "sigColorChatPendingSending": "Másodlagos Barátok Hírcsatorna Szöveg Színe",
+        "ringColor": "Gyűrű Színe",
+        "itemShapeFillColor": "Elem Alak Kitöltő Színe",
+        "recipientInputStyle": "Címzett Beviteli Stílusa",
+        "chipBackgroundColor": "Chip Háttérszíne",
+        "pstsIndicatorColor": "A PSTS Jelző Színe",
+        "pstsDividerColor": "PSTS Elválasztóvonal Színe",
+        "sigColorChatSnapWithoutSound": "Hang Nélküli Snap Szöveg Színe",
+        "sigColorIconPrimary": "Akció Menü Ikon Színe",
+        "scButtonColor": "Snapchat Gomb Színe",
+        "recipientPillBackgroundDrawable": "Címzett Kapszula Háttér",
+        "sigColorChatSnapWithSound": "Hanggal Rendelkező Snap Szöveg Színe",
+        "boxBackgroundColor": "Doboz Háttérszíne",
+        "sigColorBaseAppYellow": "Alap Alkalmazás Sárga Szín"
+    },
+    "send_override_dialog": {
+        "unlimited_duration": "Korlátlan",
+        "saveable_snap_hint": "Tedd a Snapet menthetővé a csevegésben",
+        "title": "Média küldése mint {type}",
+        "duration": "Időtartam: {duration}"
     }
 }

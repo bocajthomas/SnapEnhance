@@ -50,7 +50,9 @@
                 "config_import_success_toast": "Config succesvol geïmporteerd",
                 "config_import_failure_toast": "Gefaald om config te importeren {error}",
                 "saved_config_snackbar": "Config opgeslagen",
-                "config_export_failure_toast": "Config exporteren gefaald {error}"
+                "config_export_failure_toast": "Config exporteren gefaald {error}",
+                "older_required": "Deze functie heeft Snapchat v{version} nodig om correct te werken",
+                "newer_required": "Deze functie heeft Snapchat v{version} of nieuwer nodig om correct te werken"
             },
             "social": {
                 "streaks_expiration_short": "{hours}u",
@@ -72,7 +74,7 @@
                 "update_title": "SnapEnhance Update",
                 "update_content": "Versie {version} is beschikbaar!",
                 "update_button": "Download",
-                "version_title": "V{versionName} · Geforked door Jacob",
+                "version_title": "V{versionName} · Geforked door bocajthomas",
                 "debug_build_summary_title": "Je gebruikt een debug versie van SE Extended",
                 "debug_build_summary_content": "Versie {versionName} ({versionCode})",
                 "debug_build_summary_date": "Build datum: {date} ({days} dagen geleden)",
@@ -107,7 +109,8 @@
                 "streaks_expiration_text": "Verloopt in {eta}",
                 "streaks_expiration_text_expired": "Verlopen",
                 "reminder_button": "Zet herinnering",
-                "delete_scope_confirm_dialog_title": "Weet u zeker dat u {scope} wilt verwijderen?"
+                "delete_scope_confirm_dialog_title": "Weet u zeker dat u {scope} wilt verwijderen?",
+                "notes_placeholder": "Klik om een notitie toe te voegen"
             },
             "logged_stories": {
                 "story_failed_to_load": "Gefaald om te laden",
@@ -173,7 +176,7 @@
             "manage_rule_feature": {
                 "disable_state_subtext": "Geen vrienden/groepen zullen worden beïnvloed",
                 "disable_state_option": "Uitgeschakeld",
-                "dialog_clear_confirmation_text": "Weet je zeker dat je je lijst wilt opruimen?",
+                "dialog_clear_confirmation_text": "Weet je zeker dat je de lijst wilt opruimen?",
                 "whitelist_state_option": "Niemand behalve ...",
                 "whitelist_state_button": "Selecteer toegestane vrienden/groepen",
                 "blacklist_state_option": "Iedereen behalve ...",
@@ -364,10 +367,6 @@
                         "description": "Geef een aangepast padformaat op voor gedownloade media\n\nBeschikbare variabelen:\n - %username%\n - %source%\n - %hash%\n - %date_time%",
                         "name": "Aangepaste padindeling"
                     },
-                    "logging": {
-                        "description": "Toont toast wanneer media worden gedownload",
-                        "name": "Loggen"
-                    },
                     "opera_download_button": {
                         "name": "Opera-downloadknop",
                         "description": "Voegt een downloadknop toe in de rechterbovenhoek wanneer je een Snap bekijkt.\nAls u lang op de knoppen drukt, wordt het downloaden geforceerd"
@@ -375,6 +374,16 @@
                     "auto_download_voice_notes": {
                         "name": "Automatisch spraakberichten downloaden",
                         "description": "Download automatisch bij het spelen van spraakberichten"
+                    },
+                    "logging_options": {
+                        "name": "Opties voor Loggen",
+                        "description": "Instellingen voor Logging-toasts",
+                        "properties": {
+                            "logging": {
+                                "name": "Loggen",
+                                "description": "Toont toasts wanneer er media aan het downloaden is"
+                            }
+                        }
                     }
                 },
                 "description": "Snapchat-media downloaden"
@@ -407,6 +416,10 @@
                             "home_tab": {
                                 "name": "Startpagina tabblad",
                                 "description": "Overschrijft het starttabblad bij het openen van Snapchat"
+                            },
+                            "simple_snapchat": {
+                                "name": "Simpele snapchat",
+                                "description": "Stelt een simpelere versie van Snapchat in"
                             }
                         }
                     },
@@ -433,9 +446,693 @@
                     "disable_spotlight": {
                         "name": "Spotlight uitschakelen",
                         "description": "Schakelt de Spotlight pagina uit"
+                    },
+                    "custom_theme": {
+                        "name": "Aangepaste thema",
+                        "description": "Pas de snapchat kleuren aan\nPs: als je een donkere thema kiest (zoals AMOLED), moet je misschien donkere modus aandoen in de App Uiterlijk instellingen voor betere resultaten"
+                    },
+                    "prevent_message_list_auto_scroll": {
+                        "description": "Voorkomt het bericht van naar beneden scrollen wanneer je een bericht verstuurd/krijgt",
+                        "name": "Voorkomt Bericht Lijst Auto Scroll"
+                    },
+                    "opera_media_quick_info": {
+                        "description": "Toont nuttige informatie van media zoals datum van aanmaak in de opera kijker context menu",
+                        "name": "Opera Media Snelle Info"
+                    },
+                    "stealth_mode_indicator": {
+                        "name": "Sluip Modus Indicatie",
+                        "description": "Voegt een 👻 emoji naast de conversatie in sluip modus"
+                    },
+                    "hide_story_suggestions": {
+                        "name": "Verstop Verhaal Suggesties",
+                        "description": "Verwijdert suggesties van de Verhalen pagina"
+                    },
+                    "old_bitmoji_selfie": {
+                        "name": "Oude Bitmoji Selfie",
+                        "description": "Brengt de Bitmoji selfies van ouder snapchat versies terug"
+                    },
+                    "friend_feed_menu_buttons": {
+                        "name": "Vrienden Feed Menu Knoppen",
+                        "description": "Selecteer welke knoppen te laten zien in de Vrienden Feed Menu"
+                    },
+                    "auto_close_friend_feed_menu": {
+                        "name": "Auto Sluit Vrienden Feed Menu",
+                        "description": "Sluit de Vrienden Feed Menu automatisch nadat de instellingen knop is ingedrukt"
+                    },
+                    "vertical_story_viewer": {
+                        "name": "Verticale Verhalen Kijker",
+                        "description": "Stelt de verticale verhalen kijker in voor alle verhalen"
+                    },
+                    "enable_friend_feed_menu_bar": {
+                        "name": "Vriendenoverzicht Menu Balk",
+                        "description": "Schakelt de nieuwe vriendenfeed-menubalk in"
+                    },
+                    "message_indicators": {
+                        "name": "Berichten indicators",
+                        "description": "Voegt specifieke indicatie iconen bij het bericht\nPs: indicaties kunnen niet 100% accuraat zijn"
+                    },
+                    "snap_preview": {
+                        "name": "Snap voorvertoning",
+                        "description": "Laat een kleine voortvertoning zien bij nog niet bekeken snaps in de chat"
+                    },
+                    "edit_text_override": {
+                        "name": "Bewerk Text Overschrijven",
+                        "description": "Overschrijft text veld gedrag"
+                    },
+                    "hide_quick_add_suggestions": {
+                        "name": "Verstop Quick Add suggesties",
+                        "description": "Verwijdert quick add vriend suggesties"
+                    },
+                    "custom_friend_feed_label": {
+                        "name": "Aangepast Vriendenoverzicht Label",
+                        "description": "Veranderd het paginabijschrift op het vriendenoverzicht"
+                    },
+                    "icon_style": {
+                        "description": "Verander de stijl van de materiaaliconen\n\nOndersteunde functies:\n- Opera Download Knop\n- Markeer Snap Als Gezien Knoppen\n- Vrienden Feed Menu Knoppen\n- COF Experimenten\n- Bericht Indicatoren",
+                        "name": "Icoonstijl"
                     }
                 },
                 "name": "Gebruikersomgeving"
+            },
+            "messaging": {
+                "properties": {
+                    "hide_typing_notifications": {
+                        "name": "Verstop Aan Het Typen Notificatie",
+                        "description": "Voorkomt iedereen van zien dat je aan het typen bent"
+                    },
+                    "mark_snap_as_seen_button": {
+                        "name": "Markeer Snap als Gezien Knop",
+                        "description": "Voegt a knop toe om een snap te markeren wanneer je deze bekijkt\nDit zal zelfs werken als Sluip Modus aanstaat"
+                    },
+                    "loop_media_playback": {
+                        "name": "Herhaalt Media Afspelen",
+                        "description": "Herhaalt de media afspelen wanneer je Snaps/Verhalen bekijkt"
+                    },
+                    "call_start_confirmation": {
+                        "name": "Start Bellen Bevestiging",
+                        "description": "Laat een bevestigings dialoog zien wanneer je een gesprek start"
+                    },
+                    "bypass_screenshot_detection": {
+                        "name": "Omzeil Screenshot Detectie",
+                        "description": "Voorkomt Snapchat van het detecteren wanneer je een screenshot neemt"
+                    },
+                    "half_swipe_notifier": {
+                        "properties": {
+                            "min_duration": {
+                                "description": "De minimale duur van de half swipe (in seconden)",
+                                "name": "Minimale Duratie"
+                            },
+                            "max_duration": {
+                                "name": "Maximale duratie",
+                                "description": "De maximale duur van de half swipe (in seconden)"
+                            }
+                        },
+                        "name": "\"Half Swipe\" Melding",
+                        "description": "Informeert je wanneer iemand half swiped in je conversatie"
+                    },
+                    "anonymous_story_viewing": {
+                        "description": "Voorkomt iedereen van weten dat jij hun verhaal hebt bekeken",
+                        "name": "Anoniem Verhalen Bekijken"
+                    },
+                    "prevent_story_rewatch_indicator": {
+                        "name": "Voorkom Verhaal Opnieuw Bekeken Indicatie",
+                        "description": "Voorkomt iedereen van weten dat jij hun verhaal opnieuw hebt bekeken"
+                    },
+                    "hide_peek_a_peek": {
+                        "description": "Voorkomt de notificatie van verstuurd worden wanneer je in een chat half swiped",
+                        "name": "Verstop Peek-a-Peek"
+                    },
+                    "auto_mark_as_read": {
+                        "description": "Markeerd berichten/snaps automatisch als gelezen zelfs a Sluip Modus aanstaat",
+                        "name": "Markeer als Gelezen Automatisch"
+                    },
+                    "skip_when_marking_as_seen": {
+                        "name": "Sla Over Wanneer je Markeert als Gezien",
+                        "description": "Slaat automatisch over naar de volgende Snap wanneer als je een Snap markeert als gezien\nGebruik in combinatie met de Markeer als Gezien Knop"
+                    },
+                    "disable_replay_in_ff": {
+                        "name": "Schakel Herhaling Uit in FF",
+                        "description": "Zet de mogelijkheid om iets opnieuw af te spelen als je er lang op drukt in het vriendenoverzicht uit"
+                    },
+                    "unlimited_snap_view_time": {
+                        "name": "Oneindige Snap Bekijk Tijd",
+                        "description": "Verwijdert de Tijdslimiet voor het bekijken van Snaps"
+                    },
+                    "hide_bitmoji_presence": {
+                        "name": "Verstop Bitmoji Aanwezigheid",
+                        "description": "Voorkomt je Bitmoji van opduiken wanneer je in de chat bent"
+                    },
+                    "unlimited_conversation_pinning": {
+                        "name": "Pin Oneindig Veel Gesprekken",
+                        "description": "Zorgt ervoor dat je oneindig veel conversaties kunt vastpinnen (enkel lokaal!)"
+                    },
+                    "prevent_message_sending": {
+                        "description": "Voorkomt het sturen van bepaalde soorten berichten",
+                        "name": "Voorkom het sturen van berichten"
+                    },
+                    "friend_mutation_notifier": {
+                        "name": "Melding bij wijzigin in Vriendschap",
+                        "description": "Meldt wanneer er iets veranderd in het profiel van een vriend"
+                    },
+                    "better_notifications": {
+                        "properties": {
+                            "group_notifications": {
+                                "description": "Voegt alle meldingen samen in 1 melding",
+                                "name": "Groepeer meldingen"
+                            },
+                            "media_preview": {
+                                "description": "Toont een voorbeeld van de geselecteerde mediatypes in de melding",
+                                "name": "Media Preview"
+                            },
+                            "media_caption": {
+                                "name": "Media Ondertitel",
+                                "description": "Toont de bijschrift van de media in de melding"
+                            },
+                            "stacked_media_messages": {
+                                "description": "Voegt meerdere mediaberichten samen in 1 tekstmelding als er geen voorbeeld getoond kan worden. Gebruik in combinatie met Chat Preview",
+                                "name": "Gestapelde Mediaberichten"
+                            },
+                            "friend_add_source": {
+                                "description": "Toont de afkomst van een vriendschapsverzoek in de melding",
+                                "name": "Toevoegmethode Vriend"
+                            },
+                            "smart_replies": {
+                                "name": "Slimme Reacties",
+                                "description": "Voegt voorgestelde antwoorden toe aan meldingen(Android 10+). Gebruik in combinatie met Antwoordknop"
+                            },
+                            "chat_preview": {
+                                "description": "Toont een voorbeeld van het ontvangen bericht in de melding",
+                                "name": "Chat Preview"
+                            },
+                            "mark_as_read_and_save_in_chat": {
+                                "description": "Voegt een markeer als gelezen en sla op in chat-knop toe aan de melding",
+                                "name": "Markeer als Gelezen en Sla op in Chat"
+                            },
+                            "reply_button": {
+                                "name": "Antwoordknop",
+                                "description": "Voegt een antwoordknop toe aan de melding"
+                            },
+                            "download_button": {
+                                "name": "Downloadknop",
+                                "description": "Zorgt ervoor dat je de media kunt download van in de melding"
+                            },
+                            "mark_as_read_button": {
+                                "name": "Markeer als gelezen-knop",
+                                "description": "Zorgt ervoor dat je een bericht als gelezen kunt markeren van in de melding"
+                            }
+                        },
+                        "name": "Betere meldingen",
+                        "description": "Voegt meer info toe aan meldingen"
+                    },
+                    "auto_save_messages_in_conversations": {
+                        "description": "Slaat elk bericht automatisch op in conversaties",
+                        "name": "Sla berichten automatisch op"
+                    },
+                    "message_logger": {
+                        "name": "Berichtenlogger",
+                        "properties": {
+                            "keep_my_own_messages": {
+                                "name": "Sla mijn eigen berichten op",
+                                "description": "Zorgt ervoor dat je eigen berichten niet verwijderd worden"
+                            },
+                            "message_filter": {
+                                "name": "Berichtenfilter",
+                                "description": "Selecteer welke berichten gelogd moeten worden (leeg is alle berichten)"
+                            },
+                            "auto_purge": {
+                                "name": "Automatisch opschonen",
+                                "description": "Verwijderd gecachte berichten automatisch na een bepaalde tijd"
+                            }
+                        },
+                        "description": "Zorgt ervoor dat berichten niet verwijderd worden"
+                    },
+                    "notification_blacklist": {
+                        "description": "Selecteer meldingen die geblokkeerd moeten worden",
+                        "name": "Melding Blacklist"
+                    },
+                    "strip_media_metadata": {
+                        "name": "Verwijder Metadata Media",
+                        "description": "Verwijdert de metadata van media voor het verstuurd wordt"
+                    },
+                    "remove_groups_locked_status": {
+                        "description": "Zorgt ervoor dat je de groepsinfo kunt zien nadat je gekickt bent",
+                        "name": "Ontgrendel Groepen"
+                    },
+                    "gallery_media_send_override": {
+                        "description": "Spooft de mediabron bij het verzenden vanuit de galerij",
+                        "name": "Override voor het verzenden van Gallerijmedia"
+                    },
+                    "bypass_message_retention_policy": {
+                        "name": "Omzeil het verwijderen van berichten",
+                        "description": "Zorgt dat berichten niet verwijderd worden nadat je ze bekeken hebt"
+                    },
+                    "bypass_message_action_restrictions": {
+                        "description": "Zorgt ervoor dat je kunt reageren op een snap zonder die te openen of een onopslabaar bericht op te slaan",
+                        "name": "Omzeil Restricties voor Berichtacties"
+                    }
+                },
+                "description": "Verander hoe je interacteerd met je vrienden",
+                "name": "Berichten"
+            },
+            "global": {
+                "properties": {
+                    "better_location": {
+                        "properties": {
+                            "spoof_location": {
+                                "name": "Spoof locatie",
+                                "description": "Spooft je locatie naar iets wat je zelf kiest"
+                            },
+                            "walk_radius": {
+                                "name": "Wandel Radius",
+                                "description": "Wandel willekeurig rond in deze radius (ft)"
+                            },
+                            "suspend_location_updates": {
+                                "name": "Blokkeer Locatie Updates",
+                                "description": "Zorgt dat je locatie niet wordt geüpdatet"
+                            },
+                            "spoof_headphones": {
+                                "name": "Spoof koptelefoon",
+                                "description": "Spooft dat je muziek aan het luisteren bent op de kaart"
+                            },
+                            "show_battery_level": {
+                                "name": "Toon batterijniveau",
+                                "description": "Toont het batterijniveau van je vrienden op de kaart"
+                            },
+                            "coordinates": {
+                                "description": "Stel de coördinaten voor de gespoofde locatie in",
+                                "name": "Coördinaten"
+                            },
+                            "always_update_location": {
+                                "name": "Update Locatie Altijd",
+                                "description": "Forceert Snapchat om je locatie up te daten, ook al is er geen GPS data ontvangen"
+                            },
+                            "spoof_battery_level": {
+                                "name": "Spoof batterijniveau",
+                                "description": "Spooft je batterijniveau op de kaart\nNummer moet tussen 0 en 100 liggen"
+                            }
+                        },
+                        "name": "Betere locatie",
+                        "description": "Verbetert Snapchats locatie"
+                    },
+                    "media_upload_quality": {
+                        "properties": {
+                            "force_video_upload_source_quality": {
+                                "description": "Forceer Snapchat om de bronkwaliteit te gebruiken bij het uploaden van video's\nAandacht: metadata wordt hierdoor misschien niet verwijderd",
+                                "name": "Forceer bronkwaliteit bij het uploaden van een video"
+                            },
+                            "custom_image_upload_format": {
+                                "name": "Aangepast Upload Formaat voor Foto's",
+                                "description": "Stelt een aangepast fotoformaat in\nSelecteer een lossless-formaat (zoals PNG) voor de beste kwaliteit"
+                            },
+                            "disable_image_compression": {
+                                "description": "Zorgt ervoor dat foto's niet gecompresseerd worden als ze geupload worden",
+                                "name": "Schakel Fotocompressie Uit"
+                            }
+                        },
+                        "name": "Media Upload Kwaliteit",
+                        "description": "Passt de uploadkwaliteit van media aan"
+                    },
+                    "snapchat_plus": {
+                        "name": "Snapchat Plus",
+                        "description": "Schakelt sommige Snapchat Plus functies in\nSommige server-side dingen werken mogelijks niet"
+                    },
+                    "auto_updater": {
+                        "name": "Automatische updates",
+                        "description": "Checkt vanzelf voor nieuwe updates"
+                    },
+                    "disable_metrics": {
+                        "name": "Schakel metrics uit",
+                        "description": "Zorgt dat Snapchat bepaalde analytische info niet meer stuurt"
+                    },
+                    "disable_permission_requests": {
+                        "description": "Zorgt dat Snapchat niet om bepaalde machtigingen vraagt",
+                        "name": "Schakel machtigingsverzoeken uit"
+                    },
+                    "spotlight_comments_username": {
+                        "name": "Toon Naam bij Spotlight Comments",
+                        "description": "Toont de gebruikersnaam van de auteur bij de Spotlight reacties"
+                    },
+                    "default_volume_controls": {
+                        "description": "Forceert Snapchat om de volumebesturing van het systeem te gebruiken",
+                        "name": "Standaard Volume Besturingen"
+                    },
+                    "disable_telecom_framework": {
+                        "description": "Zorgt ervoor dat Snapchat het Android Telecom Framework niet kan gebruiken\nHierdoor kan je naar muziek luisteren terwijl je aan het bellen bent",
+                        "name": "Schakel Telecomnetwerk uit"
+                    },
+                    "hide_active_music": {
+                        "name": "Verberg Actieve Muziek",
+                        "description": "Zorgt ervoor dat Snapchat niet weet da je muziek aan het luisteren bent\nDit zorgt ervoor dat je snaps kunt nemen met je volumeknoppen terwijl je muziek aan het luisteren bent"
+                    },
+                    "default_video_playback_rate": {
+                        "description": "Stelt de standaarsnelheid in waarmee videos afspelen in\nNummer moet tussen 0.1 en 4.0 liggen",
+                        "name": "Standaard afspeelsnelheid van Videos"
+                    },
+                    "block_ads": {
+                        "name": "Blokkeer Ads",
+                        "description": "Zorgt dat er geen advertenties getoond worden"
+                    },
+                    "bypass_video_length_restriction": {
+                        "description": "Single: stuur een enkele video\nSplit: splits de video na het bewerken",
+                        "name": "Omzeil Videoduratie Restricties"
+                    },
+                    "video_playback_rate_slider": {
+                        "name": "Video Afspeelsnelheid Slider"
+                    },
+                    "disable_snap_splitting": {
+                        "description": "Zorgt ervoor dat Snaps niet in meerdere delen worden opgesplitst\nFoto's die je stuurt worden in videos veranderd",
+                        "name": "Schakel gesplitste snaps uit"
+                    },
+                    "disable_custom_tabs": {
+                        "description": "Open links in ondersteunde apps in plaats van de Web Browser",
+                        "name": "Schakel In-App Tabbladen uit"
+                    },
+                    "disable_confirmation_dialogs": {
+                        "description": "Bevestigt de geselecteerde acties automatisch",
+                        "name": "Schakel bevestigingsdialoogvensters uit"
+                    },
+                    "disable_story_sections": {
+                        "description": "Verwijderd onderdelen van de verhaalpagina\nHeeft misschien een refresh nodig om correct te werken",
+                        "name": "Schakel Onderdelen uit op de Verhaalpagina"
+                    },
+                    "disable_memories_snap_feed": {
+                        "name": "Schakel het \"Memories\"-overzicht uit",
+                        "description": "Voorkomt dat Snapchat het overzicht van recente Herinneringen toont als je omhoog veegt bij de camera"
+                    },
+                    "disable_google_play_dialogs": {
+                        "name": "Schakel Google Play Services-dialoogvensters uit",
+                        "description": "Voorkomt dat Google Play Services dialoogvensters kan tonen"
+                    }
+                },
+                "name": "Globaal",
+                "description": "Pas Snapchats globale instellingen aan"
+            },
+            "camera": {
+                "properties": {
+                    "black_photos": {
+                        "name": "Zware Fotos",
+                        "description": "Vervangt getrokken foto's met een zwarte achtergrond\nDit gebeurd niet bij video's"
+                    },
+                    "custom_resolution": {
+                        "name": "Aangepaste Resolutie",
+                        "description": "Stel een aangepaste cameraresolutie in, breedte x hoogte (bv. 1920x1080).\nDe aangepaste resolutie moet door je apparaat ondersteund worden"
+                    },
+                    "disable_cameras": {
+                        "name": "Schakel Cameras Uit",
+                        "description": "Zorgt ervoor dat Snapchat de geselecteerde cameras niet kan gebruiken"
+                    },
+                    "override_front_resolution": {
+                        "name": "Overschrijf Resolutie Voorkant",
+                        "description": "Overschrijft de cameraresolutie voor de camera aan de voorkant van je toestel"
+                    },
+                    "override_back_resolution": {
+                        "description": "Overschrijft de cameraresolutie voor de camera aan de achterkant van het toestel",
+                        "name": "Overschrijf Resolutie Achterkant"
+                    },
+                    "front_custom_frame_rate": {
+                        "description": "Overschrijft de framerate van de camera aan de voorkant van het toestel",
+                        "name": "Aangepaste Framerate Voorkant"
+                    },
+                    "force_camera_source_encoding": {
+                        "description": "Forceert de bron-encodering van de camera",
+                        "name": "Forceer Bron-encodering van Camera"
+                    },
+                    "hevc_recording": {
+                        "name": "HEVC Opnames",
+                        "description": "Gebruikt de HEVC (H.265) codec voor het opnemen van videos"
+                    },
+                    "back_custom_frame_rate": {
+                        "name": "Aangepaste Framerate Achterkant",
+                        "description": "Overschrijft de framerate van de camera aan de achterkant van het toestel"
+                    },
+                    "immersive_camera_preview": {
+                        "description": "Voorkomt dat Snapchat de Camera-preview bijsnijdt\nDit kan de camera laten flikkeren op sommige apparaten"
+                    }
+                },
+                "name": "Camera",
+                "description": "Pas de juiste instellingen aan voor de perfecte snap"
+            },
+            "streaks_reminder": {
+                "description": "Herinnert je op bepaalde tijdstippen aan je streaks",
+                "properties": {
+                    "interval": {
+                        "name": "Interval",
+                        "description": "Het interval tussen elke herinnering (in uren)"
+                    },
+                    "remaining_hours": {
+                        "name": "Resterende Tijd",
+                        "description": "Hoeveel tijd er over moet zijn voor er een melding getoond wordt (uren)"
+                    },
+                    "group_notifications": {
+                        "name": "Groepeer Meldingen",
+                        "description": "Groepeert alle meldingen in één enkele melding"
+                    }
+                },
+                "name": "Streaks Herinnering"
+            },
+            "rules": {
+                "name": "Regels",
+                "description": "Beheer automatisch functies per persoon"
+            },
+            "experimental": {
+                "properties": {
+                    "native_hooks": {
+                        "properties": {
+                            "disable_bitmoji": {
+                                "description": "Schakelt Bitmojis uit op het Profiel van Vrienden",
+                                "name": "Schakel Bitmoji Uit"
+                            },
+                            "composer_hooks": {
+                                "properties": {
+                                    "show_first_created_username": {
+                                        "description": "Toont de eerste gebruikersnaam naast de huidige gebruikersnaam op de profielpagina",
+                                        "name": "Toon Eerst Aangemaakte Gebruikersnaam"
+                                    },
+                                    "composer_console": {
+                                        "description": "Zorgt ervoor dat je JavaScript code in Composer kunt uitvoeren(enkel bij ARM64)",
+                                        "name": "Composer Console"
+                                    },
+                                    "composer_logs": {
+                                        "name": "Composer Logboeken",
+                                        "description": "Stuurt de consolelogboeken van Composer naar de SE Extended-console"
+                                    },
+                                    "bypass_camera_roll_limit": {
+                                        "description": "Verhoogt het maximale aantal aan media dat je vanuit je Camera Roll kunt sturen",
+                                        "name": "Omzeil Camera Roll Limiet"
+                                    }
+                                },
+                                "description": "Injecteert Code in het Composer cross-platform UI framework",
+                                "name": "Composer Hooks"
+                            },
+                            "custom_shared_library": {
+                                "name": "Aangepaste Shared Library",
+                                "description": "Laad een aangepaste Shared Library in Snapchat. Deze functie is enkel om dingen te testen"
+                            },
+                            "custom_emoji_font": {
+                                "name": "Aangepast Lettertype voor Emojis",
+                                "description": "Zorgt ervoor dat je een aangepast lettertype voor emojis kunt gebruiken. Werkt enkel met .ttf lettertypes"
+                            }
+                        },
+                        "name": "Native Hooks",
+                        "description": "Onveilige Opties die Snapchats Code \"hooken\""
+                    },
+                    "media_file_picker": {
+                        "name": "Mediabestand Kiezer",
+                        "description": "Zorgt ervoor dat je elke video/foto uit je gallerij kunt kiezen"
+                    },
+                    "better_transcript": {
+                        "name": "Betere Ondertitels",
+                        "properties": {
+                            "force_transcription": {
+                                "name": "Forceer Ondertitels bij Audioberichten",
+                                "description": "Zorgt dat alle audioberichten kunnen ondertiteld worden"
+                            },
+                            "preferred_transcription_lang": {
+                                "name": "Voorkeurstaal voor Ondertitels",
+                                "description": "De voorkeurstaal voor de ondertiteling (b.v. EN, ES, FR, NL)"
+                            },
+                            "enhanced_transcript": {
+                                "name": "Verbeterde Ondertitels",
+                                "description": "Verbetert de ondertitels met gebruik van DeepL\nZorg dat je hun privacy policy hebt gelezen voor je deze functie gebruikt."
+                            },
+                            "enhanced_transcript_in_notifications": {
+                                "name": "Verbeterde Ondertitels in Meldingen",
+                                "description": "Voegt ondertitels vertaald met DeepL toe aan meldingen. Hiervoor moet Chat Preview aanstaan bij Betere Meldingen"
+                            }
+                        },
+                        "description": "Verbetert de ondertitels van spraakberichten"
+                    },
+                    "spoof": {
+                        "properties": {
+                            "randomize_persistent_device_token": {
+                                "name": "Maak je Persistent Device Token willekeurig",
+                                "description": "Genereert een random token elke keer dat je inlogt"
+                            },
+                            "fingerprint": {
+                                "name": "Vingerafdruk van Apparaat",
+                                "description": "Spooft de apparaatvingerafdruk"
+                            },
+                            "android_id": {
+                                "description": "Spooft je Android ID naar het gegeven ID",
+                                "name": "Android ID"
+                            },
+                            "remove_vpn_transport_flag": {
+                                "name": "Verwijder VPN Transportvlag",
+                                "description": "Zorgt ervoor dat Snapchat je VPN niet kan detecteren"
+                            },
+                            "remove_mock_location_flag": {
+                                "name": "Verwijder \"Mock Location\" vlag",
+                                "description": "Zorgt ervoor dat Snapchat een \"Mock Location\"(= valse locatie) niet kan detecteren"
+                            },
+                            "play_store_installer_package_name": {
+                                "description": "Overschrijft de naam van het installatiepakket naar com.android.vending",
+                                "name": "Play Store Installer Pakketnaam"
+                            }
+                        },
+                        "description": "Spooft bepaalde informatie over jou",
+                        "name": "Spoof"
+                    },
+                    "account_switcher": {
+                        "properties": {
+                            "auto_backup_current_account": {
+                                "description": "Backt het huidig account vanzelf up als je uitlogt of switch van account",
+                                "name": "Huidig Account vanzelf Backuppen"
+                            }
+                        },
+                        "name": "Account Wisselaar",
+                        "description": "Zorgt ervoor dat je kunt wisselen van account zonder uit te loggen\nLang drukken op het zoekicoontje naast je Bitmojiprofiel om het menu te openen\nDeze functie is experimenteel en zal waarschijnlijk veranderen in de toekomst"
+                    },
+                    "call_recorder": {
+                        "name": "Gesprekken Opnemen",
+                        "description": "Neemt automatisch alle audiogesprekken op"
+                    },
+                    "best_friend_pinning": {
+                        "description": "Hiermee kun je een vriend vastzetten als je nummer één beste vriend. Alleen jij kunt de vastgezette beste vriend zien.",
+                        "name": "Beste Vriend Vastzetten"
+                    },
+                    "friend_notes": {
+                        "name": "Vrienden Notities",
+                        "description": "Zorgt ervoor dat je notities kunt toevoegen aan je vriendenprofielen"
+                    },
+                    "cof_experiments": {
+                        "name": "COF Experimenten",
+                        "description": "Schakelt beta/niet uitgebrachte Snapchatfuncties in"
+                    },
+                    "no_friend_score_delay": {
+                        "description": "Verwijderd de vertraging wanneer je een score van een vriend wil bekijken",
+                        "name": "Vriendenscore zonder vertraging"
+                    },
+                    "e2ee": {
+                        "description": "Encrypt al je berichten met AES door middel van een gedeelde geheime sleutel\nZorg dat je je sleutel ergens veilig opslaat!",
+                        "name": "End-To-End Encryptie",
+                        "properties": {
+                            "force_message_encryption": {
+                                "name": "Forceer Berichtversleuteling",
+                                "description": "Voorkomt het sturen van versleutelde berichten naar mensen die E2E Versleuteling niet aan hebben staan"
+                            },
+                            "encrypted_message_indicator": {
+                                "name": "Indicator Voor Versleutelde Berichten",
+                                "description": "Voegt een 🔒-emoji toe naast een versleuteld bericht"
+                            }
+                        }
+                    },
+                    "voice_note_auto_play": {
+                        "description": "Speelt het volgende audiobericht automatisch af als het vorige bericht gedaan is",
+                        "name": "Audiobericht Auto Play"
+                    },
+                    "edit_message": {
+                        "name": "Bewerkbare Berichten",
+                        "description": "Zorgt ervoor dat je berichten kunt bewerken in gesprekken"
+                    },
+                    "convert_message_locally": {
+                        "description": "Converteert Snaps naar externe media in de chat (enkel lokaal). Deze knop is te vinden bij het chat download menu",
+                        "name": "Converteer Bericht Lokaal"
+                    },
+                    "app_lock": {
+                        "name": "App Vergrendeling",
+                        "description": "Vergrendeld Snapchat met je apparaatvergrendeling (vingerafdruk, gezichtsherkenning, ...)"
+                    },
+                    "infinite_story_boost": {
+                        "name": "Oneindige Story Boost",
+                        "description": "Omzeilt het Story Boost limiet"
+                    },
+                    "meo_passcode_bypass": {
+                        "name": "My Eyes Only Pincode Omzeiling",
+                        "description": "Omzeilt de pincode van My Eyes Only\nDit werkt enkel als de pincode al eens eerder correct ingevuld is"
+                    },
+                    "hidden_snapchat_plus_features": {
+                        "name": "Verborgen Snapchat+ Functies",
+                        "description": "Schakelt beta/niet uitgebrachte Snapchat+ Functies in\nWerkt misschien niet op oudere Snapchatversies"
+                    },
+                    "prevent_forced_logout": {
+                        "description": "Voorkomt dat Snapchat je uitlogt op dit apparaat als je op een ander apparaat inlogt",
+                        "name": "Voorkom Geforceerde Logout"
+                    },
+                    "custom_streaks_expiration_format": {
+                        "description": "Past het vervaltijdformaat voor Streaks aan\n\nBeschikbare variabelen:\n- %c: Aantal Streaks\n- %e: Zandloper Emoji\n- %d: Dagen\n- %d: Uren\n- %d: Minuten\n- %d: Seconden\n- %w: Resterende tijd",
+                        "name": "Aangepast Streaks Vervaltijdformaat"
+                    },
+                    "add_friend_source_spoof": {
+                        "description": "Spooft de afkomst van een vriendschapsverzoek"
+                    },
+                    "story_logger": {
+                        "name": "Story Logger",
+                        "description": "Voorziet een geschiedenis voor verhalen van je vrienden"
+                    },
+                    "context_menu_fix": {
+                        "name": "Context Menu Fix",
+                        "description": "Probeert het vriendenoverzichtmenu te fixen omdat dit soms niet goed weergeven wordt als het apparaat offline is"
+                    }
+                },
+                "description": "Experimentele Functies",
+                "name": "Experimenteel"
+            },
+            "scripting": {
+                "description": "Voer aangepaste scripts uit om SE-extended nog verder uit te breiden",
+                "properties": {
+                    "developer_mode": {
+                        "description": "Toont debug info op Snapchat's UI",
+                        "name": "Ontwikkelaarsmodus"
+                    },
+                    "module_folder": {
+                        "description": "De map waar de scripts opgeslaan zijn",
+                        "name": "Module Map"
+                    },
+                    "auto_reload": {
+                        "name": "Automatisch Herladen",
+                        "description": "Herlaad scripts automatisch als ze aangepast worden"
+                    },
+                    "integrated_ui": {
+                        "name": "Geïntegreerde UI",
+                        "description": "Sta toe dat scripts aangepaste UI-componenten toevoegen aan Snapchat"
+                    },
+                    "disable_log_anonymization": {
+                        "description": "Schakelt het anonimiseren van logs uit",
+                        "name": "Schakel het anonimiseren van logs uit"
+                    },
+                    "old_tool_box_add_view": {
+                        "description": "Gebruik de oude \"add view\" om de toolbox aan Snapchat toe te voegen.\nDeze functie is tijdelijk"
+                    }
+                },
+                "name": "Scripts"
+            },
+            "friend_tracker": {
+                "properties": {
+                    "allow_running_in_background": {
+                        "name": "Sta Uitvoeren op Achtergrond toe",
+                        "description": "Zorgt ervoor dat de tracker op de achtergrond kan lopen. Dit zorgt ervoor dat je batterij snel leeg gaat!"
+                    },
+                    "record_messaging_events": {
+                        "description": "Registreer berichtevenementen zoals het openen van een snap, het lezen van een bericht, etc...",
+                        "name": "Registreer berichtevenementen"
+                    },
+                    "auto_purge": {
+                        "name": "Automatisch Opschonen",
+                        "description": "Verwijderd automatisch opgeslagen gebeurtenissen ouder dan de gegeven [leeftijd]"
+                    }
+                },
+                "name": "Vriendentracker",
+                "description": "Neem de activiteit van een vriend op Snapchat op"
             }
         },
         "options": {
@@ -520,7 +1217,156 @@
             "message_indicators": {
                 "location_indicator": "Voegt een 📍-pictogram toe aan snaps wanneer deze zijn verzonden met ingeschakelde locatie",
                 "platform_indicator": "Voegt het platformpictogram toe waarvandaan een medium is verzonden (bijvoorbeeld Android, iOS, Web)",
-                "encryption_indicator": "Voegt een 🔒-pictogram toe naast berichten die alleen naar jou zijn verzonden"
+                "encryption_indicator": "Voegt een 🔒-pictogram toe naast berichten die alleen naar jou zijn verzonden",
+                "ovf_editor_indicator": "Toont als een snap gestuurd is met de OVF Editor",
+                "director_mode_indicator": "Voegt een ✏️- icoon toe aan Snaps waneer ze gestuurd zijn met de Regisseurmodus, die gebruikt kan worden om gallerijfotos als snaps te sturen"
+            },
+            "custom_theme": {
+                "creamy_vanilla": "Creamy Vanilla",
+                "mint_chocolate": "Mint Chocolate",
+                "watercolor_wash": "Watercolor Wash",
+                "spicy_chili": "Spicy Chili",
+                "apple_orchard": "Apple Orchard",
+                "lavender_field": "Lavender Field",
+                "lemon_drop": "Lemon Drop",
+                "ginger_snap": "Ginger Snap",
+                "lemon_meringue": "Lemon Meringue",
+                "ocean_fog": "Ocean Fog",
+                "modern_farmhouse": "Modern Farmhouse",
+                "firefly_night": "Firefly Night",
+                "custom": "Aangepast Thema (Gebruik de Snelle Acties om themas te beheren)",
+                "material_you_light": "Material You Licht (Android 12+)",
+                "midnight_slate": "Midnight Slate",
+                "material_you_dark": "Material You Donker (Android 12+)",
+                "woodland_mystery": "Woodland Mystery",
+                "peppermint_candy": "Peppermint Candy",
+                "galaxy_glitter": "Galaxy Glitter",
+                "gingerbread_house": "Gingerbread House",
+                "bubblegum_pink": "Bubblegum Pink",
+                "earthy_autumn": "Earthy Autumn",
+                "light_blue": "Lichtblauw",
+                "lava_flow": "Lava Flow",
+                "cherry_bomb": "Cherry Bomb",
+                "cosmic_night": "Cosmic Night",
+                "amoled_dark_mode": "AMOLED Donkere Modus",
+                "dark_blue": "Donkerblauw",
+                "zesty_lemon": "Zesty Lemon",
+                "spring_meadow": "Spring Meadow",
+                "midnight_library": "Midnight Library",
+                "lemon_sorbet": "Lemon Sorbet",
+                "spicy_mustard": "Spicy Mustard",
+                "art_deco_glam": "Art Deco Glam",
+                "alien_landscape": "Alien Landscape",
+                "ocean_depths": "Ocean Depths",
+                "tropical_paradise": "Tropical Paradise",
+                "industrial_chic": "Industrial Chic"
+            },
+            "app_appearance": {
+                "always_dark": "Altijd Donker",
+                "always_light": "Altijd Licht"
+            },
+            "auto_download_sources": {
+                "friend_stories": "Verhalen van Vrienden",
+                "public_stories": "Publieke Verhalen",
+                "spotlight": "Spotlight",
+                "friend_snaps": "Snaps van Vrienden"
+            },
+            "notifications": {
+                "initiate_audio": "Inkomende Spraakoproep",
+                "abandon_audio": "Gemiste Spraakoproep",
+                "speaking": "Aan het spreken",
+                "initiate_video": "Inkomende Videooproep",
+                "abandon_video": "Gemiste Videooproep",
+                "chat_reaction": "DM Reactie",
+                "group_chat_reaction": "Reactie in Groep",
+                "camera_roll_save": "Opgeslaan in foto's",
+                "chat": "Bericht",
+                "snap_replay": "Snap Opnieuw Afgespeeld",
+                "chat_reply": "Antwoord",
+                "snap": "Snap",
+                "typing": "Aan het typen",
+                "stories": "Verhalen",
+                "chat_screenshot": "Schermopname",
+                "chat_screen_record": "Schermopname (video)"
+            },
+            "gallery_media_send_override": {
+                "always_ask": "Altijd Vragen",
+                "ORIGINAL": "Originele Media",
+                "SAVEABLE_SNAP": "Opslabare Snap",
+                "SNAP": "Snap",
+                "NOTE": "Audiobericht"
+            },
+            "friend_mutation_notifier": {
+                "remove_friend": "Waarschuw als iemand je als vriend verwijdert",
+                "bitmoji_background_changes": "Waarschuw als iemand zijn Bitmoji-achtergrond verandert",
+                "bitmoji_scene_changes": "Waarschuw als iemand zijn Bitmoji-positie aanpast",
+                "birthday_changes": "Waarschuw als iemand zijn verjaardag aanpast",
+                "bitmoji_selfie_changes": "Waarschuw als iemand zijn Bitmoji-selfie verandert",
+                "bitmoji_avatar_changes": "Waarschuw als iemand zijn Bitmoji verandert"
+            },
+            "friend_feed_menu_buttons": {
+                "conversation_info": "👤 Gespreksinfo",
+                "e2e_encryption": "🔒 Gebruik E2E-Versleuteling",
+                "auto_download": "⬇️ Auto Download",
+                "auto_save": "💬 Sla berichten automatisch op",
+                "unsaveable_messages": "⬇️ Onopslabare Berichten",
+                "auto_open_snaps": "📷 Auto Open Snaps",
+                "stealth": "👻 Verberg Modus",
+                "mark_snaps_as_seen": "👀Markeer Snaps als gezien",
+                "mark_stories_as_seen_locally": "👀 Markeer Stories als gezien (enkel lokaal)"
+            },
+            "logging": {
+                "started": "Gestart",
+                "success": "Gelukt",
+                "progress": "Voortgang",
+                "failure": "Gefaalt"
+            },
+            "simple_snapchat": {
+                "always_enabled": "Altijd Ingeschakeld",
+                "always_disabled": "Altijd Uitgeschakeld"
+            },
+            "icon_style": {
+                "outlined": "Uitgelijnd",
+                "filled": "Gevuld",
+                "sharp": "Scherp",
+                "two-tone": "Tweetonig"
+            },
+            "path_format": {
+                "create_author_folder": "Maak een map voor elke auteur",
+                "create_source_folder": "Maak een map voor elke media brontype",
+                "append_hash": "Voeg een uniek hash toe aan de bestandsnaam",
+                "append_username": "Voeg de gebruikersnaam toe aan de bestandsnaam",
+                "append_source": "Voeg de mediabron toe aan de bestandsnaam",
+                "append_date_time": "Voeg de datum en tijd toe aan de bestandsnaam"
+            },
+            "strip_media_metadata": {
+                "hide_extras": "Verberg Extras (bv. @gebruikersnaam)",
+                "remove_audio_note_duration": "Verwijder Lengte van Audiobericht",
+                "remove_audio_note_transcript_capability": "Voorkom ondertiteling bij audiobericht",
+                "hide_caption_text": "Verberg Ondertitel",
+                "hide_snap_filters": "Verberg Filters"
+            },
+            "hide_ui_components": {
+                "hide_profile_call_buttons": "Verberg de Oproepknoppen van het profiel",
+                "hide_chat_gallery_button": "Verberg de Gallerijknop in de chat",
+                "hide_post_to_story_buttons": "Verberg de Post op Verhaal-knoppen",
+                "hide_chat_camera_button": "Verberg de Cameraknop in de chat",
+                "hide_map_reactions": "Verberg de Kaartreacties",
+                "hide_voice_record_button": "Verberg de Audio-opneemknop",
+                "hide_live_location_share_button": "Verberg de knop \"Live Locatie Delen\"",
+                "hide_unread_chat_hint": "Verberg de Tip voor Ongelezen Chat",
+                "hide_gift_snapchat_plus_reminders": "Verberg de \"Geef Snapchat+ cadeau\"-herinneringen",
+                "hide_stickers_button": "Verberg de Stickers-knop",
+                "hide_snap_create_group_buttons": "Verwijder de ...",
+                "hide_chat_call_buttons": "Verberg de Oproepknoppen in de chat"
+            },
+            "snapchat_plus": {
+                "not_subscribed": "Niet geabonneerd",
+                "basic": "Basis",
+                "ad_free": "Reclamevrij"
+            },
+            "auto_mark_as_read": {
+                "snap_reply": "Markeer snaps als gelezen als je erop antwoord"
             }
         }
     },
@@ -578,14 +1424,271 @@
             "description": "Lees de disclaimer verklaring"
         },
         "logger_history": {
-            "name": "Loggergeschiedenis"
+            "name": "Loggergeschiedenis",
+            "description": "Zie de geschiedenis van geregistreerde berichten"
         }
     },
     "friend_menu_option": {
-        "anti_auto_save": "Anti auto. opslaan"
+        "anti_auto_save": "Anti auto. opslaan",
+        "mark_stories_as_seen_locally": "Markeer Verhalen als gezien (enkel lokaal)",
+        "mark_snaps_as_seen": "Markeer Snaps als gezien",
+        "preview": "Voorbeeld",
+        "stealth_mode": "Onzichtbare Modus",
+        "auto_download_blacklist": "Blacklist voor Automatisch Downloaden"
     },
     "content_type": {
         "CHAT": "Bericht",
-        "FAMILY_CENTER_ACCEPT": "Familie centrum accepteren"
+        "FAMILY_CENTER_ACCEPT": "Familie centrum accepteren",
+        "SNAP": "Snap",
+        "STATUS_CONVERSATION_CAPTURE_RECORD": "Schermopname (video)",
+        "STATUS_SAVE_TO_CAMERA_ROLL": "Opslaan in foto's",
+        "STATUS_CONVERSATION_CAPTURE_SCREENSHOT": "Schermopname (video)",
+        "EXTERNAL_MEDIA": "Externe Media",
+        "NOTE": "Spraakbericht",
+        "SHARE": "Gedeeld",
+        "STATUS": "Status",
+        "LOCATION": "Locatie",
+        "STICKER": "Sticker",
+        "STATUS_CALL_MISSED_AUDIO": "Gemist Audiogesprek",
+        "STATUS_CALL_MISSED_VIDEO": "Gemist Videogesprek"
+    },
+    "send_override_dialog": {
+        "title": "Stuur media als {type}",
+        "unlimited_duration": "Onbeperkt",
+        "saveable_snap_hint": "Maakt een snap opslabaar in chat",
+        "duration": "Duur: {duration}"
+    },
+    "friendship_link_type": {
+        "incoming_follower": "Inkomende Volger",
+        "incoming": "Inkomend",
+        "mutual": "Wederzijds",
+        "suggested": "Voorgesteld",
+        "outgoing": "Uitgaand",
+        "blocked": "Geblokkeerd",
+        "deleted": "Verwijderd",
+        "following": "Volgend"
+    },
+    "bulk_messaging_action": {
+        "choose_action_title": "Kies een actie",
+        "selection_dialog_continue_button": "Verdergaan",
+        "confirmation_dialog": {
+            "title": "Ben je zeker?",
+            "message": "Deze actie beïnvloed alle geselecteerde vrienden. Deze actie kan niet ongedaan gemaakt worden."
+        },
+        "actions": {
+            "remove_friends": "Verwijder vrienden",
+            "clear_conversations": "Maak gesprekken leeg"
+        },
+        "progress_status": "{index} van {total} aan het verwerken"
+    },
+    "button": {
+        "cancel": "Annuleer",
+        "send": "Verzend",
+        "download": "Download",
+        "negative": "Nee",
+        "open": "Open",
+        "ok": "OK",
+        "positive": "Ja"
+    },
+    "conversation_preview": {
+        "unknown_user": "Onbekende Gebruiker",
+        "streak_expiration": "verloopt in {day} dagen {hour} uren {minute} minuten",
+        "total_messages": "Totaal aantal verzonden/ontvange berichten: {count}",
+        "title": "Voorbeeld",
+        "no_messages": "Geen berichten gevonden!"
+    },
+    "profile_info": {
+        "add_source": "Toegevoegd via",
+        "snapchat_plus": "Snapchat Plus",
+        "first_created_username": "Eerste Gebruikersnaam",
+        "mutable_username": "Huidige Gebruikersnaam",
+        "display_name": "Weergavenaam",
+        "added_date": "Toegevoegd op",
+        "snapchat_plus_state": {
+            "subscribed": "Geabonneerd",
+            "not_subscribed": "Niet geabonneerd"
+        },
+        "birthday": "Verjaardag: {month} {day}",
+        "title": "Profielinfo",
+        "hidden_birthday": "Verjaardag: verborgen",
+        "friendship": "Vriendschap"
+    },
+    "chat_export": {
+        "exporter_dialog": {
+            "text_field_selection_all": "Alle",
+            "select_conversations_title": "Selecteer Gesprekken",
+            "text_field_selection": "{amount} geselecteerd",
+            "amount_of_messages_title": "Aantal Berichten (leeg is allemaal)",
+            "download_medias_title": "Download Media",
+            "export_file_format_title": "Bestandsformaat om te exporteren",
+            "message_type_filter_title": "Filter Berichten op Type"
+        },
+        "dialog_negative_button": "Annuleer",
+        "exporting_chats": "Chats aan het exporteren...",
+        "no_messages_found": "Geen berichten gevonden!",
+        "dialog_positive_button": "Exporteer",
+        "exported_to": "Geëxporteerd naar {path}",
+        "processing_chats": "{amount} gesprekken aan het verwerken...",
+        "export_fail": "Exporteren van gesprek {conversation} mislukt",
+        "writing_output": "Uitvoer aan het schrijven...",
+        "finished": "Klaar! Je kan dit venster nu sluiten.",
+        "exporting_message": "{conversation} aan het exporteren..."
+    },
+    "better_notifications": {
+        "button": {
+            "download": "Download",
+            "mark_as_read": "Markeer als Gelezen",
+            "reply": "Antwoord"
+        }
+    },
+    "profile_picture_downloader": {
+        "avatar_option": "Avatar",
+        "button": "Download Profielfoto",
+        "title": "Profielfoto Downloader",
+        "background_option": "Achtergrond"
+    },
+    "chat_action_menu": {
+        "edit_message": "Bewerk bericht",
+        "preview_button": "Voorbeeld",
+        "download_button": "Download",
+        "convert_message": "Converteer Bericht",
+        "delete_logged_message_button": "Verwijder Geregistreerd Bericht",
+        "show_chat_edit_history": "Toon Bewerkingsgeschiedenis van Chat"
+    },
+    "opera_context_menu": {
+        "show_debug_info": "Toon Debug Info",
+        "created_at": "Gemaakt op {date}",
+        "media_size": "Mediagrootte: {size}",
+        "media_duration": "Mediaduur: {duration} ms",
+        "expires_at": "Verloopt op {date}+",
+        "download": "Download Media",
+        "sent_at": "Verzonden op {date}"
+    },
+    "mark_as_seen": {
+        "already_unseen_toast": "Al gemarkeerd als niet gezien!",
+        "seen_toast": "Gemarkeerd als gelezen!",
+        "unseen_toast": "Gemarkeerd als niet gelezen!",
+        "already_seen_toast": "Al gemarkeerd als gezien!",
+        "no_unseen_snaps_toast": "Geen ongelezen Snaps gevonden!"
+    },
+    "modal_option": {
+        "profile_info": "Profielinfo",
+        "close": "Sluit"
+    },
+    "half_swipe_notifier": {
+        "notification_channel_name": "\"Half Swipe\"",
+        "notification_content_dm": "{friend} heeft zojuist in je chat gehalf-swiped voor {duration} seconden",
+        "notification_content_group": "{friend} heeft zojuist in {groep} gehalf-swiped voor {duration} seconden"
+    },
+    "call_start_confirmation": {
+        "dialog_message": "Ben je zeker dat je een oproep wilt starten?",
+        "dialog_title": "Start audiogesprek"
+    },
+    "media_download_source": {
+        "voice_call": "Audio-oproep",
+        "message_logger": "Berichtenlogger",
+        "chat_media": "Chatmedia",
+        "story": "Verhaal",
+        "public_story": "Publiek Verhaal",
+        "none": "Geen",
+        "pending": "Bezig",
+        "spotlight": "Spotlight",
+        "profile_picture": "Profielfoto",
+        "story_logger": "Verhaallogger"
+    },
+    "end_to_end_encryption": {
+        "native_hooks_send_failure_toast": "Verzenden mislukt! Zet Native Hook alsjeblieft aan in de instellingen.",
+        "accept_secret_key_failure_toast": "Geheime sleutel accepteren mislukt",
+        "outgoing_pk_message": "Sleuteluitwisselingsverzoek",
+        "toolbox": {
+            "shared_key_fingerprint": "Je vingerafdruk is:\n\n{fingerprint}\n\nZorg dat deze overeenkomt met die van je vriend!",
+            "initiate_exchange_button": "Begin Sleuteluitwisseling",
+            "no_shared_key": "Je hebt nog geen gedeelde geheime sleutel met deze vriend. Klik hieronder om een nieuwe sleutel te genereren."
+        },
+        "confirmation_dialogs": {
+            "title": "End-to-end versleuteling",
+            "confirmation_1": "WAARSCHUWING: Dit gaat je bestaande sleutel overschrijven. Je gaat toegang verliezen tot alle versleutelde berichten van deze vriend. Ben je zeker dat je wilt doorgaan?",
+            "confirmation_2": "Ben je HEEL zeker dat je door wilt gaan? Dit is je laatste kans om je terug te trekken."
+        },
+        "unencrypted_conversation_send_failure_toast": "Je kunt geen versleutelde content sturen naar versleutelde en onversleuteld gesprekken tegelijk!",
+        "accept_public_key_success_toast": "Public key succesvol geaccepteerd!",
+        "accept_public_key_failure_toast": "Openbare Sleutel accepteren mislukt",
+        "accept_secret_button": "Accepteer geheime sleutel",
+        "no_participants_to_encrypt_toast": "Je hebt geen vrienden in dit gesprek om berichten mee te versleutelen!",
+        "incoming_pk_message": "Je hebt zojuist een openbare sleutel-verzoek gekregen. Klik hieronder om dit te accepteren.",
+        "encryption_failed_toast": "Versleutelen van bericht mislukt! Check logcat voor meer details.",
+        "accept_secret_key_success_toast": "Klaar! Nu kan je versleutelde berichten sturen en ontvangen met deze vriend.",
+        "accept_public_key_button": "Accepteer Publieke Sleutel",
+        "outgoing_secret_message": "Sleuteluitwisselingsantwoord",
+        "incoming_secret_message": "Je vriend heeft zojuist je openbare sleutel geaccepteerd. Klik hieronder om de geheime sleutel te accepteren."
+    },
+    "material3_strings": {
+        "date_range_input_invalid_range_input": "Ongeldig datumbereik",
+        "date_range_picker_scroll_to_previous_month": "Vorige maand",
+        "date_picker_today_description": "Vandaag",
+        "date_input_invalid_for_pattern": "Ongeldige datum",
+        "date_input_invalid_year_range": "Ongeldig jaar",
+        "date_input_invalid_not_allowed": "Ongeldige datum",
+        "date_range_picker_start_headline": "Van",
+        "date_range_picker_end_headline": "Tot",
+        "date_range_picker_title": "Selecteer datumbereik",
+        "date_picker_switch_to_calendar_mode": "Kalender",
+        "date_range_picker_scroll_to_next_month": "Volgende maand",
+        "date_range_picker_day_in_range": "Geselecteerd",
+        "date_picker_switch_to_input_mode": "Invoeren"
+    },
+    "download_processor": {
+        "no_attachments_toast": "Geen bijlages gevonden!",
+        "processing_toast": "{path} aan het verwerken...",
+        "already_queued_toast": "Media zit al in de wachtrij!",
+        "content_saved_toast": "Opgeslaan!",
+        "failed_generic_toast": "Downloaden mislukt",
+        "attachment_type": {
+            "external_media": "Externe Media",
+            "note": "Audiobericht",
+            "snap": "Snap",
+            "original_story": "Origineel Verhaal",
+            "gif": "GIF",
+            "sticker": "Sticker"
+        },
+        "select_attachments_title": "Selecteer Bijlages",
+        "download_started_toast": "Download Gestart",
+        "unsupported_content_type_toast": "Niet-ondersteund inhoudstype!",
+        "failed_no_longer_available_toast": "Media is niet meer beschikbaar",
+        "failed_to_create_preview_toast": "Voorbeeld creeëren mislukt",
+        "failed_processing_toast": "Verwerking mislukt: {error}",
+        "dash_dialog": {
+            "download_all": "Alles Downloaden"
+        },
+        "failed_gallery_toast": "Opslaan naar gallerij mislukt: {error}",
+        "dash_no_chapter": "Geen hoofdstuk gevonden",
+        "already_downloaded_toast": "Media is al gedownload!",
+        "download_toast": "{path} aan het downloaden..."
+    },
+    "auto_open_snaps": {
+        "notification_content": "{count} Snaps geopend",
+        "title": "Open Snaps Automatisch"
+    },
+    "biometric_auth": {
+        "subtitle": "Verifieer jezelf om Snapchat te ontgrendelen",
+        "unlock_button": "Ontgrendel",
+        "title": "Ontgrendel Snapchat"
+    },
+    "friend_mutation_observer": {
+        "friend_removed": "{username} heeft je verwijderd als vriend",
+        "birthday_removed": "{username} heeft zijn/haar verjaardag verwijderd ({birthday})",
+        "birthday_added": "{username} heeft zijn/haar verjaardag toegevoegd ({birthday})",
+        "birthday_changed": "{username} heeft zijn/haar verjaardag veranderd van {oldBirthday} naar {newBirthday}",
+        "bitmoji_selfie_changed": "{username} heeft zijn/haar Bitmoji-selfie aangepast",
+        "bitmoji_avatar_changed": "{username} heeft zijn/haar Bitmoji-avatar aangepast",
+        "bitmoji_background_changed": "{username} heeft zijn/haar Bitmoji-achtergrond aangepast",
+        "bitmoji_scene_changed": "{username} heeft zijn/haar Bitmoji-pose aangepast"
+    },
+    "streaks_reminder": {
+        "notification_title": "Streaks",
+        "notification_text": "Je gaat je Streak met {friend} verliezen binnen {hoursLeft} uren"
+    },
+    "gallery_media_send_override": {
+        "multiple_media_toast": "Je kunt maar 1 mediaelement tegelijk sturen"
     }
 }

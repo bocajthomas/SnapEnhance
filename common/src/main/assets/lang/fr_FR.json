@@ -345,10 +345,6 @@
                             }
                         }
                     },
-                    "logging": {
-                        "name": "Journalisation",
-                        "description": "Afficher une bulle de notification lorsque un média est en cours de téléchargement"
-                    },
                     "custom_path_format": {
                         "description": "Spécifier un format de chemin personnalisé pour les médias téléchargés\n\nVariables disponibles :\n - %username%\n - %source%\n - %hash%\n - %date_time%",
                         "name": "Format de chemin personnalisé"

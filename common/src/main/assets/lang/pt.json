@@ -43,7 +43,17 @@
         },
         "mappings": {
             "dialog": "Para suportar dinamicamente uma ampla variedade de versões do Snapchat, os mapeamentos são necessários para que o SnapEnhance funcione corretamente. Isso não deve levar mais de 5 segundos.",
-            "generate_failure_no_snapchat": "O SnapEnhance não conseguiu detectar o Snapchat. Tente reinstalar o Snapchat."
+            "generate_failure_no_snapchat": "O SnapEnhance não conseguiu detectar o Snapchat. Tente reinstalar o Snapchat.",
+            "generate_failure": "Ocorreu um erro ao tentar gerar mapeamentos, tente novamente."
+        },
+        "permissions": {
+            "notification_access": "Acesso a notificações",
+            "dialog": "Para continuar, é necessário preencher os seguintes requisitos:"
         }
+    },
+    "send_override_dialog": {
+        "duration": "Duração: {duration}",
+        "saveable_snap_hint": "Tornar o Snap guardável no chat",
+        "unlimited_duration": "Ilimitado"
     }
 }

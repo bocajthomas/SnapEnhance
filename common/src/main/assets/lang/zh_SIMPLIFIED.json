@@ -196,7 +196,7 @@
                 "streaks_title": "条纹",
                 "streaks_length_text": "长度: {length}",
                 "delete_scope_confirm_dialog_title": "您确定要删除 {scope}?",
-                "notes_placeholder": "添加备注"
+                "notes_placeholder": "单击添加注释"
             },
             "messaging_preview": {
                 "no_message_hint": "没有消息",
@@ -511,10 +511,6 @@
                         "description": "为下载的媒体指定自定义路径格式\n\n可用变量:\n- ％用户名％\n- ％来源％\n- %哈希%\n- ％约会时间％",
                         "name": "自定义路径格式"
                     },
-                    "logging": {
-                        "description": "下载媒体时显示 toast",
-                        "name": "记录"
-                    },
                     "auto_download_voice_notes": {
                         "description": "播放语音笔记时自动下载",
                         "name": "自动下载语音笔记"
@@ -559,6 +555,10 @@
                             "app_appearance": {
                                 "name": "应用程序外观",
                                 "description": "设置持久的应用程序外观"
+                            },
+                            "simple_snapchat": {
+                                "description": "启用简化版 Snapchat",
+                                "name": "简单的快照"
                             }
                         },
                         "name": "引导程序覆盖",
@@ -631,6 +631,14 @@
                     "hide_quick_add_suggestions": {
                         "name": "隐藏快速建议",
                         "description": "删除快速添加好友建议"
+                    },
+                    "custom_friend_feed_label": {
+                        "name": "自定义好友动态标签",
+                        "description": "更改好友提要上的页面标签"
+                    },
+                    "icon_style": {
+                        "name": "图标风格",
+                        "description": "更改材质图标的样式\n\n支持的功能:\n- Opera 下载按钮\n- 将捕捉标记为“已见”按钮\n- 好友动态菜单按钮\n- COF实验\n- 消息指示器"
                     }
                 },
                 "description": "更改 Snapchat 的外观和风格",
@@ -1211,6 +1219,10 @@
                     "voice_note_auto_play": {
                         "name": "语音笔记自动播放",
                         "description": "当前语音注释结束后自动播放下一个语音注释"
+                    },
+                    "friend_notes": {
+                        "name": "朋友备注",
+                        "description": "允许您向好友个人资料添加注释"
                     }
                 }
             },
@@ -1239,7 +1251,8 @@
                         "name": "禁用日志匿名化"
                     },
                     "old_tool_box_add_view": {
-                        "description": "使用旧的添加视图将工具箱添加到snapchat。\n注意：此功能是暂时的"
+                        "description": "使用旧的添加视图将工具箱添加到snapchat。\n注意：此功能是暂时的",
+                        "name": "旧工具箱添加视图"
                     }
                 }
             },
@@ -1482,6 +1495,21 @@
                 "lemon_drop": "柠檬滴",
                 "modern_farmhouse": "现代农舍",
                 "apple_orchard": "苹果园"
+            },
+            "simple_snapchat": {
+                "always_disabled": "始终禁用",
+                "always_enabled": "始终启用"
+            },
+            "snapchat_plus": {
+                "not_subscribed": "未订阅",
+                "basic": "基本的",
+                "ad_free": "无广告"
+            },
+            "icon_style": {
+                "outlined": "概述",
+                "filled": "充满",
+                "sharp": "锋利的",
+                "two-tone": "二音"
             }
         }
     },
@@ -1576,7 +1604,8 @@
         "dash_no_chapter": "没有找到章节",
         "dash_dialog": {
             "download_all": "下载全部",
-            "title": "下载破折号媒体"
+            "title": "下载破折号媒体",
+            "segment_text": "部分 {from} - {to}"
         },
         "download_started_toast": "下载开始",
         "failed_gallery_toast": "保存到图库失败 {error}",
@@ -1629,19 +1658,62 @@
         "accept_secret_key_failure_toast": "无法接受密钥。",
         "accept_public_key_button": "接收公钥",
         "toolbox": {
-            "initiate_exchange_button": "发起密钥交换"
-        }
+            "initiate_exchange_button": "发起密钥交换",
+            "no_shared_key": "您尚未与该好友共享秘密. 点击下方即可创建新秘密.",
+            "shared_key_fingerprint": "您的指纹是: \n\n{fingerprint}\n\n定要检查它是否与你朋友的指纹匹配!"
+        },
+        "no_participants_to_encrypt_toast": "您在此对话中没有任何可以与其加密消息的好友!",
+        "accept_secret_button": "接受秘密",
+        "unencrypted_conversation_send_failure_toast": "您不能向加密和未加密的对话发送加密内容!"
     },
     "streaks_reminder": {
-        "notification_title": "条纹"
+        "notification_title": "条纹",
+        "notification_text": "您将在 {hoursLeft} 小时内失去与 {friend} 的连胜"
     },
     "theming_attributes": {
         "sigColorChatChat": "主要好友提要文本颜色",
         "sigColorTextPrimary": "主要文字颜色",
-        "ringStartColor": "开始"
+        "ringStartColor": "开始",
+        "sigColorChatSnapWithSound": "带有声音文本颜色的快照",
+        "recipientPillBackgroundDrawable": "受药丸背景",
+        "sigColorChatConversationsLine": "对话线条颜色",
+        "sigColorIconPrimary": "操作菜单图标颜色",
+        "sigColorIconSecondary": "辅助图标颜色",
+        "scButtonColor": "Snapchat 按钮颜色",
+        "pstsDividerColor": "PSTS 分隔线颜色",
+        "editTextColor": "编辑文字颜色",
+        "chipBackgroundColor": "芯片背景颜色",
+        "strokeColor": "描边颜色",
+        "sigColorLayoutPlaceholder": "布局占位符颜色",
+        "actionSheetRoundedBackgroundDrawable": "操作菜单圆形背景颜色",
+        "listDivider": "列表分隔线颜色",
+        "actionSheetBackgroundDrawable": "操作菜单背景颜色",
+        "sigExceptionColorCameraGridLines": "相机网格线颜色",
+        "itemShapeFillColor": "项目形状填充颜色",
+        "boxBackgroundColor": "框背景颜色",
+        "pstsIndicatorColor": "PSTS 指示灯颜色",
+        "statusBarBackground": "状态栏背景颜色",
+        "sigColorButtonPrimary": "主按钮颜色",
+        "sigColorBackgroundSurfaceTranslucent": "半透明背景表面颜色",
+        "sigColorStoryRingDiscoverTabThumbnailStoryRing": "故事环“发现”选项卡缩略图故事环颜色",
+        "sigColorChatPendingSending": "次要好友提要文本颜色",
+        "rangeFillColor": "范围填充颜色",
+        "sigColorBackgroundSurface": "背景表面颜色",
+        "statusBarForeground": "状态栏前景色",
+        "sigColorBaseAppYellow": "基础应用程序黄色",
+        "sigColorStoryRingFriendsFeedStoryRing": "故事环好友动态 故事环颜色",
+        "tabTextColor": "选项卡文本颜色",
+        "sigColorChatSnapWithoutSound": "没有声音的快照文本颜色",
+        "actionSheetDescriptionTextColor": "操作菜单说明文本颜色",
+        "sigColorBackgroundMain": "背景颜色",
+        "ringColor": "戒指颜色",
+        "recipientInputStyle": "收件人输入方式",
+        "storyReplayViewRingColor": "故事重播视图 戒指颜色",
+        "listBackgroundDrawable": "对话列表背景",
+        "pstsTabBackground": "PSTS 选项卡背景"
     },
     "material3_strings": {
-        "date_range_picker_start_headline": "摘自",
+        "date_range_picker_start_headline": "从",
         "date_range_picker_end_headline": "致",
         "date_range_picker_title": "选定日期范围",
         "date_picker_switch_to_calendar_mode": "日历",
@@ -1652,9 +1724,28 @@
         "date_input_invalid_year_range": "无效年份",
         "date_input_invalid_for_pattern": "无效日期",
         "date_input_invalid_not_allowed": "无效日期",
-        "date_range_input_invalid_range_input": "无效日期范围"
+        "date_range_input_invalid_range_input": "无效日期范围",
+        "date_range_picker_day_in_range": "已选择"
     },
     "auto_open_snaps": {
-        "title": "自动打开 snaps"
+        "title": "自动打开 snaps",
+        "notification_content": "{count} 按扣打开"
+    },
+    "friend_mutation_observer": {
+        "birthday_removed": "{username} 移除了他的生日 ({birthday})",
+        "birthday_added": "{username} 添加了他的生日 ({birthday})",
+        "birthday_changed": "{username} 把他的生日从 ({oldBirthday}) 改成了 ({newBirthday})",
+        "friend_removed": "{username} 把你从好友列表移除了",
+        "bitmoji_avatar_changed": "{username} 更改了 Bitmoji 头像",
+        "bitmoji_scene_changed": "{username} 改变了他们的 Bitmoji 场景",
+        "bitmoji_background_changed": "{username} 更改了 Bitmoji 背景",
+        "notification_channel_name": "朋友突变观察者",
+        "bitmoji_selfie_changed": "{username} 改变了他们的 Bitmoji 自拍照"
+    },
+    "send_override_dialog": {
+        "saveable_snap_hint": "使 Snap 在聊天中可保存",
+        "unlimited_duration": "无限",
+        "title": "将媒体发送为 {type}",
+        "duration": "期间: {duration}"
     }
 }

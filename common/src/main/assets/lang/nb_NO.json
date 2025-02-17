@@ -304,9 +304,6 @@
                         "name": "Last ned profilbilder",
                         "description": "Lar deg laste ned profilbilder fra profilsiden"
                     },
-                    "logging": {
-                        "name": "Logging"
-                    },
                     "path_format": {
                         "name": "Stiformat",
                         "description": "Angi fillagringsformatet"

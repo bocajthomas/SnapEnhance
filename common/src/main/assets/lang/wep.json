@@ -260,10 +260,6 @@
                             }
                         }
                     },
-                    "logging": {
-                        "name": "Logging",
-                        "description": "Zeigt Toasts, wenn Medien heruntergeladen werden"
-                    },
                     "custom_path_format": {
                         "name": "Benutzerdefiniertes Pfadformat",
                         "description": "Legen Sie ein benutzerdefiniertes Pfadformat für heruntergeladene Medien fest\n\nVerfügbare Variablen:\n - %username%\n - %source%\n - %hash%\n - %date_time%"

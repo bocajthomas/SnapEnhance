@@ -342,10 +342,6 @@
                             }
                         }
                     },
-                    "logging": {
-                        "name": "Lokiin kirjaus",
-                        "description": "Näytä pieni ilmoitus kun lataus on käynnissä"
-                    },
                     "download_context_menu": {
                         "name": "Latauksen lisävalikko",
                         "description": "Antaa sinun ladata/esikatsella viestit keskustelusta tai tarinasta lisävalikosta\nPitkä painallus napeista pakottaa latauksen"
